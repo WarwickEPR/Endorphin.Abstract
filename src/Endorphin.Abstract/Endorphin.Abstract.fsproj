@@ -66,6 +66,7 @@
     <None Include="paket.references" />
     <None Include="paket.template" />
     <Compile Include="Time.fs" />
+    <Compile Include="Position.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
