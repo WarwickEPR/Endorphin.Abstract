@@ -1,0 +1,25 @@
+type project
+title
+    Endorphin.Abstract
+owners
+    Warwick Diamond and EPR Group
+authors 
+    Warwick Diamond and EPR Group
+projectUrl
+    http://github.com/WarwickEPR/Endorphin.Abstract
+iconUrl
+    https://raw.githubusercontent.com/WarwickEPR/Endorphin.Abstract/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/WarwickEPR/Endorphin.Abstract/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    fsharp science
+summary
+    Abstract concepts for Endorphin-based scientific instrument controllers
+description
+    A set of abstract concepts used by Endorphin-based scientific instrument controllers, such as ideas of time intervals and abstractions for positioning a moveable object
+
+
