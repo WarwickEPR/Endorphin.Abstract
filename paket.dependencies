@@ -1,8 +1,7 @@
 source https://nuget.org/api/v2
 
 nuget FSharp.Core redirects: force
-
-github WarwickEPR/Endorphin.Core src/Endorphin.Core.Units.fs
+nuget Endorphin.Core
 
 group Build
   source https://nuget.org/api/v2
