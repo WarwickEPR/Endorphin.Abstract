@@ -1,3 +1,8 @@
+#### 0.2.0 - 2016-07-05
+* Add Endorphin.Abstract.Geometry namespace
+** Add generic representation of Angles using either degrees or radians
+** Add generic representation of 3-vectors and points in 3D space in arbitrary units of measure.
+
 #### 0.1.1 - 2016-07-01
 * Update to new API for Endorphin.Core
 
