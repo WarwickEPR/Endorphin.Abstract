@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Point - Endorphin.Abstract</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Warwick Diamond and EPR Group"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/Endorphin.Abstract/content/style.css" />
+    <script type="text/javascript" src="/Endorphin.Abstract/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/WarwickEPR/Endorphin.Abstract">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/Endorphin.Abstract/index.html">Endorphin.Abstract</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>Point</h1>
+<p>
+  <span>Namespace: Endorphin.Abstract.Geometry</span><br />
+</p>
+<div class="xmldoc">
+</div>
+
+<!-- Render nested types and modules, if there are any -->
+
+  <h3>Functions and values</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Function or value</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '12', 12)" onmouseover="showTip(event, '12', 12)">
+            azimuth point
+          </code>
+          <div class="tip" id="12">
+            <strong>Signature:</strong> point:Point&lt;&#39;T&gt; -&gt; Angle<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L191-191" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get the spherical azimuth of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
+            create x y z
+          </code>
+          <div class="tip" id="13">
+            <strong>Signature:</strong> x:float&lt;&#39;?7466&gt; -&gt; y:float&lt;&#39;?7466&gt; -&gt; z:float&lt;&#39;?7466&gt; -&gt; Point&lt;&#39;?7466&gt;<br />
+                          <strong>Type parameters:</strong> '?7466          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L153-153" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Create a Point from a set of Cartesian co-ordinates.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
+            inclination point
+          </code>
+          <div class="tip" id="14">
+            <strong>Signature:</strong> point:Point&lt;&#39;T&gt; -&gt; Angle<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L189-189" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get the spherical inclination of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
+            map mapper point
+          </code>
+          <div class="tip" id="15">
+            <strong>Signature:</strong> mapper:(float&lt;&#39;?7471&gt; -&gt; float&lt;&#39;?7472&gt;) -&gt; point:Point&lt;&#39;?7471&gt; -&gt; Point&lt;&#39;?7472&gt;<br />
+                          <strong>Type parameters:</strong> '?7471, '?7472          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L160-160" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Map each co-ordinate of a point using the same mapping function.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
+            map3 mapper point
+          </code>
+          <div class="tip" id="16">
+            <strong>Signature:</strong> mapper:(float&lt;&#39;?7477&gt; * float&lt;&#39;?7477&gt; * float&lt;&#39;?7477&gt; -&gt; float&lt;&#39;?7478&gt; * float&lt;&#39;?7478&gt; * float&lt;&#39;?7478&gt;) -&gt; point:Point&lt;&#39;?7477&gt; -&gt; Point&lt;&#39;?7478&gt;<br />
+                          <strong>Type parameters:</strong> '?7477, '?7478          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L167-167" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Map a point using a function which accepts and returns a 3-tuple (x, y, z) of the co-ordinates.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
+            mapi mapper point
+          </code>
+          <div class="tip" id="17">
+            <strong>Signature:</strong> mapper:(int -&gt; float&lt;&#39;?7474&gt; -&gt; float&lt;&#39;?7475&gt;) -&gt; point:Point&lt;&#39;?7474&gt; -&gt; Point&lt;&#39;?7475&gt;<br />
+                          <strong>Type parameters:</strong> '?7474, '?7475          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L164-164" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Map each co-ordinate of a point using the same mapping function, with an index indicating
+which co-ordinate was passed (x : 0, y : 1, z : 2).</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
+            radius point
+          </code>
+          <div class="tip" id="18">
+            <strong>Signature:</strong> point:Point&lt;&#39;T&gt; -&gt; float&lt;&#39;T&gt;<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L187-187" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get the spherical radius of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
+            reverseParity point
+          </code>
+          <div class="tip" id="19">
+            <strong>Signature:</strong> point:Point&lt;&#39;?7500&gt; -&gt; Point&lt;&#39;?7500&gt;<br />
+                          <strong>Type parameters:</strong> '?7500          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L194-194" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Flip the parity of a point in all 3 dimensions.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
+            tuple point
+          </code>
+          <div class="tip" id="20">
+            <strong>Signature:</strong> point:Point&lt;&#39;?7486&gt; -&gt; float&lt;&#39;?7486&gt; * float&lt;&#39;?7486&gt; * float&lt;&#39;?7486&gt;<br />
+                          <strong>Type parameters:</strong> '?7486          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L177-177" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get a 3-tuple (x, y, z) of the Point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
+            withAzimuth azimuth point
+          </code>
+          <div class="tip" id="21">
+            <strong>Signature:</strong> azimuth:Angle -&gt; point:Point&lt;&#39;T&gt; -&gt; Point&lt;&#39;T&gt;<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L203-203" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Change the spherical azimuth of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+            withInclination inclination point
+          </code>
+          <div class="tip" id="22">
+            <strong>Signature:</strong> inclination:Angle -&gt; point:Point&lt;&#39;T&gt; -&gt; Point&lt;&#39;T&gt;<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L200-200" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Change the spherical inclination of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
+            withRadius radius point
+          </code>
+          <div class="tip" id="23">
+            <strong>Signature:</strong> radius:float&lt;&#39;T&gt; -&gt; point:Point&lt;&#39;T&gt; -&gt; Point&lt;&#39;T&gt;<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L197-197" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Change the spherical radius of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
+            withX x point
+          </code>
+          <div class="tip" id="24">
+            <strong>Signature:</strong> x:float&lt;&#39;?7488&gt; -&gt; point:Point&lt;&#39;?7488&gt; -&gt; Point&lt;&#39;?7488&gt;<br />
+                          <strong>Type parameters:</strong> '?7488          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L180-180" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Change the x co-ordinate of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
+            withY y point
+          </code>
+          <div class="tip" id="25">
+            <strong>Signature:</strong> y:float&lt;&#39;?7490&gt; -&gt; point:Point&lt;&#39;?7490&gt; -&gt; Point&lt;&#39;?7490&gt;<br />
+                          <strong>Type parameters:</strong> '?7490          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L182-182" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Change the y co-ordinate of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+            withZ z point
+          </code>
+          <div class="tip" id="26">
+            <strong>Signature:</strong> z:float&lt;&#39;?7492&gt; -&gt; point:Point&lt;&#39;?7492&gt; -&gt; Point&lt;&#39;?7492&gt;<br />
+                          <strong>Type parameters:</strong> '?7492          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L184-184" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Change the z co-ordinate of a point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+            x point
+          </code>
+          <div class="tip" id="27">
+            <strong>Signature:</strong> point:Point&lt;&#39;T&gt; -&gt; float&lt;&#39;T&gt;<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L170-170" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get the x value of a Point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
+            y point
+          </code>
+          <div class="tip" id="28">
+            <strong>Signature:</strong> point:Point&lt;&#39;T&gt; -&gt; float&lt;&#39;T&gt;<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L172-172" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get the y value of a Point.</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
+            z point
+          </code>
+          <div class="tip" id="29">
+            <strong>Signature:</strong> point:Point&lt;&#39;T&gt; -&gt; float&lt;&#39;T&gt;<br />
+                          <strong>Type parameters:</strong> 'T          </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Vector.fs#L174-174" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Get the z value of a Point.</p>
+
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <img src="/Endorphin.Abstract/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">Endorphin.Abstract</li>
+            <li><a href="/Endorphin.Abstract/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/Endorphin.Abstract">Get Library via NuGet</a></li>
+            <li><a href="http://github.com/WarwickEPR/Endorphin.Abstract">Source Code on GitHub</a></li>
+            <li><a href="/Endorphin.Abstract/license.html">License</a></li>
+            <li><a href="/Endorphin.Abstract/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Getting started</li>
+            <li><a href="/Endorphin.Abstract/tutorial.html">Sample tutorial</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="/Endorphin.Abstract/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/WarwickEPR/Endorphin.Abstract"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>
