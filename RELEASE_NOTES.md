@@ -1,3 +1,6 @@
+#### 0.2.1 - 2016-07-05
+* Add Point.getOrigin<'T> () to get an origin with a specified type.
+
 #### 0.2.0 - 2016-07-05
 * Add Endorphin.Abstract.Geometry namespace
 ** Add generic representation of Angles using either degrees or radians
