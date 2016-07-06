@@ -3,6 +3,7 @@
 namespace Endorphin.Abstract.Geometry
 
 open System
+open Microsoft.FSharp.Data.UnitSystems.SI.UnitSymbols
 
 /// A Cartesian type, holding a point in Cartesian (x, y, z) format.
 type Vector<[<Measure>] 'Unit> =
@@ -71,7 +72,7 @@ type Point<[<Measure>] 'Unit> = private Point of Vector<'Unit>
     static member inline (-) (p1 : Point<'T>, p2 : Point<'T>) =
         { X = p1.X - p2.X ; Y = p1.Y - p2.Y ; Z = p1.Z - p2.Z }
 
-    /// The Point representing (0, 0, 0) in the correct units..
+    /// The Point representing (0, 0, 0) in the correct units discovered by type inference.
     static member Origin =
         Point { X = LanguagePrimitives.FloatWithMeasure<'Unit> 0.0 ; Y = 0.0<_> ; Z = 0.0<_> }
 
@@ -202,3 +203,6 @@ module Point =
     /// Change the spherical azimuth of a point.
     let withAzimuth azimuth (point : Point<'T>) =
         Point.fromVector <| Vector.createSpherical point.Radius point.Inclination azimuth
+
+    /// Get an origin (0, 0, 0) point with a specified type annotation.
+    let getOrigin<[<Measure>] 'Unit> () : Point<'Unit> = Point.Origin
