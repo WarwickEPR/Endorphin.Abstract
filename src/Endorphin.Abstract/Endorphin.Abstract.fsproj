@@ -63,6 +63,7 @@
     <None Include="paket.template" />
     <Compile Include="Time.fs" />
     <Compile Include="Position.fs" />
+    <Compile Include="Angle.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
