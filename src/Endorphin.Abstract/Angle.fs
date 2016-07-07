@@ -76,6 +76,7 @@ type Angle =
     static member inline (*) (s, a1 : Angle) = Angle.from_deg <| a1.to_deg * s
     static member inline (/) (a1 : Angle, s) = Angle.from_deg <| a1.to_deg / s
     static member inline (/) (s, a1 : Angle) = Angle.from_deg <| a1.to_deg / s
+    static member Abs (a : Angle) = abs a.to_rad |> Angle_rad
 
 [<CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
 module Angle =
@@ -93,3 +94,10 @@ module Angle =
 
     /// Bound an Angle between -pi < x <= pi.
     let bound (angle : Angle) = angle.Bound
+
+    /// Returns the sine of the given angle.
+    let sin = radians >> Math.Sin
+    /// Returns the cosine of the given angle.
+    let cos = radians >> Math.Cos
+    /// Returns the tangent of the given angle.
+    let tan = radians >> Math.Tan
