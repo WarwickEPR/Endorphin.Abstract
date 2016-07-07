@@ -1,3 +1,7 @@
+#### 0.2.2 - 2016-07-08
+* Add accessors for radians and degrees to angles.
+* Add binding functions for angles to bind between pi and -pi.
+
 #### 0.2.1 - 2016-07-05
 * Add Point.getOrigin<'T> () to get an origin with a specified type.
 
