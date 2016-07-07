@@ -85,5 +85,11 @@ module Angle =
     /// Create an angle using a value in radians (dimensionless float).
     let create_rad x = Angle.from_rad x
 
+    /// Get the value in radians of an angle.
+    let radians (x : Angle) = x.to_rad
+
+    /// Get the value in degrees of an angle.
+    let degrees (x : Angle) = x.to_deg
+
     /// Bound an Angle between -pi < x <= pi.
     let bound (angle : Angle) = angle.Bound
