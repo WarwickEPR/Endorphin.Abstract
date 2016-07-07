@@ -1,3 +1,6 @@
+#### 0.2.3 - 2016-07-08
+* Add trigonometric and abs functions to angles.
+
 #### 0.2.2 - 2016-07-08
 * Add accessors for radians and degrees to angles.
 * Add binding functions for angles to bind between pi and -pi.
