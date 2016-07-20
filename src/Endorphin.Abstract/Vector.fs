@@ -90,9 +90,24 @@ module Vector =
           Y = radius * sin (inclination.to_rad) * sin (azimuth.to_rad)
           Z = radius * cos (inclination.to_rad) }
 
+    /// Get the x value of a Vector.
+    let x (vec : Vector<'T>) = vec.X
+    /// Get the y value of a Vector.
+    let y (vec : Vector<'T>) = vec.Y
+    /// Get the z value of a Vector.
+    let z (vec : Vector<'T>) = vec.Z
+
+    /// Get a 3-tuple of the co-ordinates of the vector.
+    let tuple vec = (x vec, y vec, z vec)
+
     /// Create a new vector by mapping the old values in a 3-tuple.
-    let map3 mapper vec =
-        let (x, y, z) = mapper (vec.X, vec.Y, vec.Z)
+    let mapEach mapper vec =
+        let (x, y, z) = mapper (tuple vec)
+        create x y z
+
+    /// Create a new vector by mapping two vectors in 3-tuples.
+    let mapEach2 mapper v1 v2 =
+        let (x, y, z) = mapper (tuple v1) (tuple v2)
         create x y z
 
     /// Create a new vector by mapping each individual co-ordinate with the same mapping
@@ -100,12 +115,26 @@ module Vector =
     let map mapper vec =
         create (mapper vec.X) (mapper vec.Y) (mapper vec.Z)
 
+    /// Create a new vector by mapping each individual co-ordinate with the same mapping
+    /// function.
+    let map2 mapper v1 v2 =
+        create (mapper v1.X v2.X) (mapper v1.Y v2.Y) (mapper v1.Z v2.Z)
+
     /// Create a new vector by apply the mapper to each element separately, with a counter to
     /// indicate which co-ordinate is being fed in. (x : 0, y : 1, z : 2).
     let mapi mapper vec =
         let x = mapper 0 vec.X
         let y = mapper 1 vec.Y
         let z = mapper 2 vec.Z
+        create x y z
+
+    /// Create a new vector by apply the mapper to each element of two vectors separately
+    /// but pairwise, with a counter to indicate which co-ordinate is being fed in.
+    /// (x : 0, y : 1, z : 2).
+    let mapi2 mapper v1 v2 =
+        let x = mapper 0 v1.X v2.X
+        let y = mapper 1 v1.Y v2.Y
+        let z = mapper 2 v1.Z v2.Z
         create x y z
 
     /// Get the vector that transforms one point into another.
@@ -128,16 +157,6 @@ module Vector =
     /// Get the cross product of two vectors.  Also available as the operator ^* in the Vector type.
     let cross (v1 : Vector<'T>) v2 = v1 ^* v2
 
-    /// Get the x value of a Vector.
-    let x (vec : Vector<'T>) = vec.X
-    /// Get the y value of a Vector.
-    let y (vec : Vector<'T>) = vec.Y
-    /// Get the z value of a Vector.
-    let z (vec : Vector<'T>) = vec.Z
-
-    /// Get a 3-tuple of the co-ordinates of the vector.
-    let tuple vec = (x vec, y vec, z vec)
-
     /// Change the x value of a vector.
     let withX x vec = { vec with X = x }
     /// Change the y value of a vector.
@@ -159,15 +178,28 @@ module Point =
     /// Extract the vector from a Point, apply the genericised vector function and return a Point.
     let private vecPassthrough func (Point point) = Point.fromVector <| func point
 
+    /// Extract the vector from a Point, apply the genericised vector function and return a Point.
+    let private vecPassthrough2 func (Point p1) (Point p2) = Point.fromVector <| func p1 p2
+
     /// Map each co-ordinate of a point using the same mapping function.
-    let map mapper point  = vecPassthrough (Vector.map  mapper) point
+    let map mapper point = vecPassthrough (Vector.map mapper) point
+
+    /// Map each co-ordinate of two points using the same mapping function.
+    let map2 mapper p1 p2 = vecPassthrough2 (Vector.map2 mapper) p1 p2
 
     /// Map each co-ordinate of a point using the same mapping function, with an index indicating
     /// which co-ordinate was passed (x : 0, y : 1, z : 2).
     let mapi mapper point = vecPassthrough (Vector.mapi mapper) point
 
+    /// Map each co-ordinate of two points using the same mapping function, with an index indicating
+    /// which co-ordinate was passed (x : 0, y : 1, z : 2).
+    let mapi2 mapper p1 p2 = vecPassthrough2 (Vector.mapi2 mapper) p1 p2
+
     /// Map a point using a function which accepts and returns a 3-tuple (x, y, z) of the co-ordinates.
-    let map3 mapper point = vecPassthrough (Vector.map3 mapper) point
+    let mapEach mapper point = vecPassthrough (Vector.mapEach mapper) point
+
+    /// Map two points using a function which accepts and returns a 3-tuple of the co-ordinates.
+    let mapEach2 mapper p1 p2 = vecPassthrough2 (Vector.mapEach2 mapper) p1 p2
 
     /// Get the x value of a Point.
     let x (point : Point<'T>) = point.X
@@ -195,6 +227,10 @@ module Point =
 
     /// Flip the parity of a point in all 3 dimensions.
     let reverseParity point = map (~-) point
+
+    /// Get the midpoint of two points.
+    let midpoint (p1 : Point<'T>) p2 =
+        map2 (fun a b -> (a + b) * 0.5) p1 p2
 
     /// Change the spherical radius of a point.
     let withRadius (radius : float<'T>) (point : Point<'T>) =
