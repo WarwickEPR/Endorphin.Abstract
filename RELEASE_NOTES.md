@@ -1,3 +1,6 @@
+#### 0.2.5 - 2016-07-20
+* Make pretty printing of points and vectors work with %A too.
+
 #### 0.2.4 - 2016-07-20
 * Add pretty printing of points and vectors
 * Add map2 functions for points and vectors
