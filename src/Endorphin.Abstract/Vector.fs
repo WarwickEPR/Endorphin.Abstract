@@ -11,6 +11,7 @@ type Vector<[<Measure>] 'Unit> =
       Y : float<'Unit>
       Z : float<'Unit> }
     with
+    override this.ToString () = sprintf "(%g, %g, %g)" this.X this.Y this.Z
     /// Get the magnitude of this vector.
     member this.Magnitude = sqrt (this.X * this.X + this.Y * this.Y + this.Z * this.Z)
     /// Get the equivalent spherical inclination of this vector.
@@ -53,6 +54,7 @@ type Point<[<Measure>] 'Unit> = private Point of Vector<'Unit>
     with
     /// Create a Point from a Cartesian location.
     static member internal fromVector : Vector<'Unit> -> Point<'Unit> = Point
+    override this.ToString () = sprintf "(%g, %g, %g)" this.X this.Y this.Z
 
     /// Get the x co-ordinate of the Point.
     member this.X = match this with Point vec -> vec.X
