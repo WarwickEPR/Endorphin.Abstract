@@ -1,3 +1,8 @@
+#### 0.2.4 - 2016-07-20
+* Add pretty printing of points and vectors
+* Add map2 functions for points and vectors
+* Add Point.midpoint function
+
 #### 0.2.3 - 2016-07-08
 * Add trigonometric and abs functions to angles.
 
