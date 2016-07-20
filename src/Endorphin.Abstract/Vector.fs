@@ -6,6 +6,7 @@ open System
 open Microsoft.FSharp.Data.UnitSystems.SI.UnitSymbols
 
 /// A Cartesian type, holding a point in Cartesian (x, y, z) format.
+[<StructuredFormatDisplay("({X}, {Y}, {Z})")>]
 type Vector<[<Measure>] 'Unit> =
     { X : float<'Unit>
       Y : float<'Unit>
@@ -50,6 +51,7 @@ type Vector<[<Measure>] 'Unit> =
         { X = -v1.X ; Y = -v1.Y ; Z = -v1.Z }
 
 /// A representation of a point in space.
+[<StructuredFormatDisplay("({X}, {Y}, {Z})")>]
 type Point<[<Measure>] 'Unit> = private Point of Vector<'Unit>
     with
     /// Create a Point from a Cartesian location.
