@@ -85,7 +85,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L60-60" class="github-link">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L128-128" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -103,7 +103,7 @@
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L83-83" class="github-link">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L151-151" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -114,28 +114,10 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '3', 3)" onmouseover="showTip(event, '3', 3)">
-            createOneDirection (...)
+            create (...)
           </code>
           <div class="tip" id="3">
-            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; gridSize:int -&gt; stepSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; plane:Plane -&gt; Path<br />
-                      </div>
-        </td>
-        <td class="xmldoc">
-            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L49-49" class="github-link">
-              <img src="../content/img/github.png" class="normal" />
-              <img src="../content/img/github-blue.png" class="hover" />
-            </a>
-          
-        </td>
-      </tr>
-      <tr>
-        <td class="member-name">
-
-          <code onmouseout="hideTip(event, '4', 4)" onmouseover="showTip(event, '4', 4)">
-            createSnake (...)
-          </code>
-          <div class="tip" id="4">
-            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; gridSize:int&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; stepSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; plane:Plane -&gt; Path<br />
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; plane:Plane -&gt; Path<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -143,21 +125,43 @@
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
-          
+          <p>create path i.e. x0 {y0 -&gt; yn}; x1 {y0 -&gt; yn}; x2 {y0 -&gt; yn} etc</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '4', 4)" onmouseover="showTip(event, '4', 4)">
+            createByNumberOfPoints (...)
+          </code>
+          <div class="tip" id="4">
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; (int * int) -&gt; plane:Plane -&gt; Path<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L48-48" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>create path by number of points i.e. x0 {y0 -&gt; yn}; x1 {y0 -&gt; yn}; x2 {y0 -&gt; yn} etc</p>
+
+
         </td>
       </tr>
       <tr>
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '5', 5)" onmouseover="showTip(event, '5', 5)">
-            pointAtIndex i path
+            createOneDirection (...)
           </code>
           <div class="tip" id="5">
-            <strong>Signature:</strong> i:int -&gt; path:Path -&gt; int * int<br />
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; gridSize:int -&gt; stepSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; plane:Plane -&gt; Path<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L80-80" class="github-link">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L117-117" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
@@ -168,14 +172,152 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '6', 6)" onmouseover="showTip(event, '6', 6)">
-            points path
+            createSnake (...)
           </code>
           <div class="tip" id="6">
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; plane:Plane -&gt; Path<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L64-64" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>create snaked path i.e. x0 {y0 -&gt; yn}; x1 {yn -&gt; y0}; x2 {y0 -&gt; yn} etc</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '7', 7)" onmouseover="showTip(event, '7', 7)">
+            createSnakeByNumberOfPoints (...)
+          </code>
+          <div class="tip" id="7">
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; (int * int) -&gt; plane:Plane -&gt; Path<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L82-82" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>create snaked path by number of points i.e. x0 {y0 -&gt; yn}; x1 {yn -&gt; y0}; x2 {y0 -&gt; yn} etc</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '8', 8)" onmouseover="showTip(event, '8', 8)">
+            createSquare (...)
+          </code>
+          <div class="tip" id="8">
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; gridSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; stepSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; plane:Plane -&gt; Path<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L102-102" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>create square path i.e. x0 {y0 -&gt; yn}; x1 {y0 -&gt; yn}; x2 {y0 -&gt; yn} etc</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '9', 9)" onmouseover="showTip(event, '9', 9)">
+            createSquareByNumberOfPoints (...)
+          </code>
+          <div class="tip" id="9">
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; gridSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; stepSize:int -&gt; plane:Plane -&gt; Path<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L106-106" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>create square path by number of points i.e. x0 {y0 -&gt; yn}; x1 {y0 -&gt; yn}; x2 {y0 -&gt; yn} etc</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '10', 10)" onmouseover="showTip(event, '10', 10)">
+            createSquareSnake (...)
+          </code>
+          <div class="tip" id="10">
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; gridSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; stepSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; plane:Plane -&gt; Path<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L110-110" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>create square snaked path i.e. x0 {y0 -&gt; yn}; x1 {yn -&gt; y0}; x2 {y0 -&gt; yn} etc</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '11', 11)" onmouseover="showTip(event, '11', 11)">
+            createSquareSnakeByNumberOfPoints (...)
+          </code>
+          <div class="tip" id="11">
+            <strong>Signature:</strong> (decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; * decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt;) -&gt; gridSize:decimal&lt;MeasureProduct&lt;um,MeasureOne&gt;&gt; -&gt; numberOfPoints:int -&gt; plane:Plane -&gt; Path<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L114-114" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>create square snaked path by number of points i.e. x0 {y0 -&gt; yn}; x1 {yn -&gt; y0}; x2 {y0 -&gt; yn} etc</p>
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '12', 12)" onmouseover="showTip(event, '12', 12)">
+            pointAtIndex i path
+          </code>
+          <div class="tip" id="12">
+            <strong>Signature:</strong> i:int -&gt; path:Path -&gt; int * int<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L148-148" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
+            points path
+          </code>
+          <div class="tip" id="13">
             <strong>Signature:</strong> path:Path -&gt; (int * int) []<br />
                       </div>
         </td>
         <td class="xmldoc">
-            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L77-77" class="github-link">
+            <a href="http://github.com/WarwickEPR/Endorphin.Abstract/tree/master/src/Endorphin.Abstract/Position.fs#L145-145" class="github-link">
               <img src="../content/img/github.png" class="normal" />
               <img src="../content/img/github-blue.png" class="hover" />
             </a>
