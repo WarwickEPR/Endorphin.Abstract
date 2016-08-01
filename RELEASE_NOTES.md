@@ -1,3 +1,6 @@
+#### 0.3.0 - 2016-08-01
+* General functions for creating rectangular paths.
+
 #### 0.2.5 - 2016-07-20
 * Make pretty printing of points and vectors work with %A too.
 
