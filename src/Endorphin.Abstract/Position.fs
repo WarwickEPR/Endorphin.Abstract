@@ -30,21 +30,89 @@ module Position =
                       Origin       : Point
                       Scale        : decimal<um> * decimal<um>
                       Plane        : Plane }
+        /// create path i.e. x0 {y0 -> yn}; x1 {y0 -> yn}; x2 {y0 -> yn} etc
+        let create origin (gridSize : decimal<um> * decimal<um>) (stepSize : decimal<um> * decimal<um>) plane =
+            let numberOfStepsX = int (round ((float ((fst gridSize)/1m<um>)) / (float ((fst stepSize)/1.0m<um>))))
+            let numberOfStepsY = int (round ((float ((snd gridSize)/1m<um>)) / (float ((snd stepSize)/1.0m<um>))))
 
-        let createSnake origin (gridSize : int<um>) stepSize plane =
-            let isEven x = (x % 2 = 0)
-
-            let numberOfSteps = int (round((float gridSize) / (float (stepSize/1.0m<um>))))
             let path = seq {
-                for x in 0 .. numberOfSteps do
-                    if isEven x
-                    then for y in 0 .. numberOfSteps -> (x,y)
-                    else for y in numberOfSteps .. -1 .. 0 -> (x,y) }
+                for x in 0 .. numberOfStepsX do
+                    for y in 0 .. numberOfStepsY -> (x, y) }
+
+            { ArrayIndices = path |> Seq.toArray
+              Origin = origin
+              Scale = (fst stepSize, snd stepSize)
+              Plane = plane }
+
+        /// create path by number of points i.e. x0 {y0 -> yn}; x1 {y0 -> yn}; x2 {y0 -> yn} etc
+        let createByNumberOfPoints origin (gridSize : decimal<um> * decimal<um>) (numberOfPoints : int * int) plane =
+            let (numberOfPointsX, numberOfPointsY) = numberOfPoints
+
+            let path = seq {
+                for x in 0 .. (numberOfPointsX - 1) do
+                    for y in 0 .. (numberOfPointsY - 1) -> (x, y) }
+
+            let stepSizeX = 1m<um> * (((fst gridSize) / 1m<um>) / (decimal <| fst numberOfPoints))
+            let stepSizeY = 1m<um> * (((snd gridSize) / 1m<um>) / (decimal <| snd numberOfPoints))
 
             { ArrayIndices = path |> Seq.toArray
               Origin = origin
               Plane = plane
-              Scale = (stepSize, stepSize) }
+              Scale = (stepSizeX, stepSizeY) }
+
+        /// create snaked path i.e. x0 {y0 -> yn}; x1 {yn -> y0}; x2 {y0 -> yn} etc
+        let createSnake origin (gridSize : decimal<um> * decimal<um>) (stepSize : decimal<um> * decimal<um>) plane =
+            let isEven x = (x % 2 = 0)
+
+            let numberOfStepsX = int (round ((float ((fst gridSize)/1m<um>)) / (float ((fst stepSize)/1.0m<um>))))
+            let numberOfStepsY = int (round ((float ((snd gridSize)/1m<um>)) / (float ((snd stepSize)/1.0m<um>))))
+
+            let path = seq {
+                for y in 0 .. numberOfStepsY do
+                    if isEven y
+                    then for x in 0 .. numberOfStepsX -> (x, y)
+                    else for x in numberOfStepsX .. -1 .. 0 -> (x, y) }
+
+            { ArrayIndices = path |> Seq.toArray
+              Origin = origin
+              Plane = plane
+              Scale = (fst stepSize, snd stepSize) }
+
+        /// create snaked path by number of points i.e. x0 {y0 -> yn}; x1 {yn -> y0}; x2 {y0 -> yn} etc
+        let createSnakeByNumberOfPoints origin (gridSize : decimal<um> * decimal<um>) (numberOfPoints : int * int) plane =
+            let isEven x = (x % 2 = 0)
+
+            let (numberOfPointsX, numberOfPointsY) = numberOfPoints
+
+            let path = seq {
+                for y in 0 .. (numberOfPointsY - 1) do
+                    if isEven y
+                    then for x in 0 .. (numberOfPointsX - 1) -> (x, y)
+                    else for x in (numberOfPointsX - 1) .. -1 .. 0 -> (x, y) }
+
+            let stepSizeX = 1m<um> * (((fst gridSize) / 1m<um>) / (decimal <| fst numberOfPoints))
+            let stepSizeY = 1m<um> * (((snd gridSize) / 1m<um>) / (decimal <| snd numberOfPoints))
+
+            { ArrayIndices = path |> Seq.toArray
+              Origin = origin
+              Plane = plane
+              Scale = (stepSizeX, stepSizeY) }
+
+        /// create square path i.e. x0 {y0 -> yn}; x1 {y0 -> yn}; x2 {y0 -> yn} etc
+        let createSquare origin gridSize stepSize plane =
+            create origin (gridSize, gridSize) (stepSize, stepSize) plane
+
+         /// create square path by number of points i.e. x0 {y0 -> yn}; x1 {y0 -> yn}; x2 {y0 -> yn} etc
+        let createSquareByNumberOfPoints origin gridSize stepSize plane =
+            createByNumberOfPoints origin (gridSize, gridSize) (stepSize, stepSize) plane
+
+        /// create square snaked path i.e. x0 {y0 -> yn}; x1 {yn -> y0}; x2 {y0 -> yn} etc
+        let createSquareSnake origin gridSize stepSize plane =
+            createSnake origin (gridSize, gridSize) (stepSize, stepSize) plane
+
+        /// create square snaked path by number of points i.e. x0 {y0 -> yn}; x1 {yn -> y0}; x2 {y0 -> yn} etc
+        let createSquareSnakeByNumberOfPoints origin gridSize numberOfPoints plane =
+            createSnakeByNumberOfPoints origin (gridSize, gridSize) (numberOfPoints, numberOfPoints) plane
 
         let createOneDirection origin gridSize stepSize plane =
             let numberOfSteps = int (round((float gridSize) / (float (stepSize/1.0m<um>))))
