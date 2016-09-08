@@ -169,7 +169,7 @@ module Vector =
     /// Get the angle between 2 vectors.
     let angle (v1 : Vector<'u>) (v2 : Vector<'v>) =
         let mag = magnitude v1 * magnitude v2
-        v1 .* v2 / mag |> acos |> Angle.create_rad
+        v1 .* v2 / mag |> (fun r -> if r > 1.0 then 1.0 elif r < -1.0 then -1.0 else r) |> acos |> Angle.create_rad
 
 [<CompilationRepresentation (CompilationRepresentationFlags.ModuleSuffix)>]
 module Point =

@@ -1,3 +1,7 @@
+#### 0.3.2 - 2016-09-08
+* Fix floating point errors in Vector.angle allowing for NaN to be returned if
+  the two vectors were very close, but not exactly equal.
+
 #### 0.3.1 - 2016-09-08
 * Fix Azimuth angles in vectors being measured from the wrong axis.  They are
   now measured as 0 on the x-axis, pi/2 on the y-axis, etc.
