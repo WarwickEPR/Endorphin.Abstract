@@ -18,7 +18,7 @@ type Vector<[<Measure>] 'Unit> =
     /// Get the equivalent spherical inclination of this vector.
     member this.Inclination = acos (this.Z / this.Magnitude) |> Angle.from_rad
     /// Get the equivalent spherical azimuth of this vector.
-    member this.Azimuth = atan2 this.X this.Y |> Angle.from_rad
+    member this.Azimuth = atan2 this.Y this.X |> Angle.from_rad
 
     /// Add one vector to another.
     static member inline (+) (v1, v2) =

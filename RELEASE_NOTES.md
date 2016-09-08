@@ -1,3 +1,7 @@
+#### 0.3.1 - 2016-09-08
+* Fix Azimuth angles in vectors being measured from the wrong axis.  They are
+  now measured as 0 on the x-axis, pi/2 on the y-axis, etc.
+
 #### 0.3.0 - 2016-08-01
 * General functions for creating rectangular paths.
 
