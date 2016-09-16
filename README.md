@@ -12,3 +12,7 @@ More documentation to follow...
 - [Jake Lishman](https://github.com/jakelishman)
 - Ben Green
 - Colin Stephen
+
+## Project Lead
+
+- [Dr. Gavin Morley](mailto:gavin.morley@warwick.ac.uk)
