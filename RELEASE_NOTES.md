@@ -1,3 +1,6 @@
+#### 0.3.3 - 2016-10-27
+* Add ToString() method to plane DU
+
 #### 0.3.2 - 2016-09-08
 * Fix floating point errors in Vector.angle allowing for NaN to be returned if
   the two vectors were very close, but not exactly equal.

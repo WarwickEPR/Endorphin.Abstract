@@ -24,6 +24,7 @@ module Position =
             | XY
             | XZ
             | YZ
+            override x.ToString() = sprintf "%A" x
 
         type Path =
             private { ArrayIndices : (int * int) array
