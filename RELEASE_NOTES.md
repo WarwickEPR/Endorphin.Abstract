@@ -1,3 +1,7 @@
+#### 0.3.4 - 2016-11-14
+* Add functions to repeat first or last points in a paths
+  e.g. to prime triggering in an external device or prepare for scanning
+
 #### 0.3.3 - 2016-10-27
 * Add ToString() method to plane DU
 

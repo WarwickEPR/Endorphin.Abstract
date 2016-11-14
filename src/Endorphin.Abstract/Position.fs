@@ -151,3 +151,9 @@ module Position =
 
         let coordinatesAtIndex i path =
             path |> coordinateForPoint path.ArrayIndices.[i]
+
+        let repeatLastPoint (path:Path) =
+            { path with ArrayIndices = Array.append path.ArrayIndices [| Array.last path.ArrayIndices |] }
+
+        let repeatFirstPoint (path:Path) =
+            { path with ArrayIndices = Array.append [| Array.head path.ArrayIndices |] path.ArrayIndices }
