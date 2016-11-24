@@ -1,3 +1,6 @@
+#### 0.3.5 - 2016-11-24
+* Add "raster" paths where the points used to build the image are taken in the same direction
+
 #### 0.3.4 - 2016-11-14
 * Add functions to repeat first or last points in a paths
   e.g. to prime triggering in an external device or prepare for scanning
