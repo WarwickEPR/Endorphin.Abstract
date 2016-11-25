@@ -1,3 +1,6 @@
+#### 0.3.6 - 2016-11-25
+* Add parameter for the flyback skip size on raster images
+
 #### 0.3.5 - 2016-11-24
 * Add "raster" paths where the points used to build the image are taken in the same direction
 

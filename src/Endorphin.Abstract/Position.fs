@@ -102,11 +102,11 @@ module Position =
         /// create a path where imaging data is always taken in the same direction with "fly-back" points before the
         /// next row is imaged i.e. x0 {y0 -> yn} x1 {yn .. -10 .. y0} x1 {y0 -> yn}
         // Ideally we'd not dwell at each point on the flyback, but that would require scanner changes to set the dwell time per point
-        let createRaster origin (gridSize : decimal<um> * decimal<um>) (stepSize : decimal<um> * decimal<um>) plane =
+        let createRaster (flybackSkip:decimal<um>) origin (gridSize : decimal<um> * decimal<um>) (stepSize : decimal<um> * decimal<um>) plane =
             
             let numberOfStepsX = int (round ((float ((fst gridSize)/1m<um>)) / (float ((fst stepSize)/1.0m<um>))))
             let numberOfStepsY = int (round ((float ((snd gridSize)/1m<um>)) / (float ((snd stepSize)/1.0m<um>))))
-            let flybackStep = 1m<um>/(fst stepSize) |> round |> int
+            let flybackStep = flybackSkip/(fst stepSize) |> round |> int
 
             let path = seq {
                 for y in 0 .. numberOfStepsY do
@@ -121,10 +121,10 @@ module Position =
         /// create a path where imaging data is always taken in the same direction with "fly-back" points before the
         /// next row is imaged i.e. x0 {y0 -> yn} x1 {yn .. -10 .. y0} x1 {y0 -> yn}
         // Ideally we'd not dwell at each point on the flyback, but that would require scanner changes to set the dwell time per point
-        let createRasterByNumberOfPoints origin (gridSize : decimal<um> * decimal<um>) (numberOfPoints : int * int) plane =
+        let createRasterByNumberOfPoints (flybackSkip:decimal<um>) origin (gridSize : decimal<um> * decimal<um>) (numberOfPoints : int * int) plane =
 
             let (numberOfPointsX, numberOfPointsY) = numberOfPoints
-            let flybackStep = 1m<um>/(fst gridSize)*(numberOfPointsX |> decimal) |> round |> int
+            let flybackStep = flybackSkip/(fst gridSize)*(numberOfPointsX |> decimal) |> round |> int
 
             let path = seq {
                 for y in 0 .. (numberOfPointsY-1) do
@@ -158,12 +158,12 @@ module Position =
             createSnakeByNumberOfPoints origin (gridSize, gridSize) (numberOfPoints, numberOfPoints) plane
 
         /// create square rastered path i.e. x0 {y0 -> yn}; x1 {yn -> y0}; x2 {y0 -> yn} etc
-        let createSquareRaster origin gridSize stepSize plane =
-            createRaster origin (gridSize, gridSize) (stepSize, stepSize) plane
+        let createSquareRaster flybackSkip origin gridSize stepSize plane =
+            createRaster flybackSkip origin (gridSize, gridSize) (stepSize, stepSize) plane
 
         /// create square rastered path by number of points i.e. x0 {y0 -> yn}; x1 {yn -> y0}; x2 {y0 -> yn} etc
-        let createSquareRasterByNumberOfPoints origin gridSize numberOfPoints plane =
-            createRasterByNumberOfPoints origin (gridSize, gridSize) (numberOfPoints, numberOfPoints) plane
+        let createSquareRasterByNumberOfPoints flybackSkip origin gridSize numberOfPoints plane =
+            createRasterByNumberOfPoints flybackSkip origin (gridSize, gridSize) (numberOfPoints, numberOfPoints) plane
 
         let createOneDirection origin gridSize stepSize plane =
             let numberOfSteps = int (round((float gridSize) / (float (stepSize/1.0m<um>))))
