@@ -104,14 +104,14 @@ module Position =
         // Ideally we'd not dwell at each point on the flyback, but that would require scanner changes to set the dwell time per point
         let createRaster origin (gridSize : decimal<um> * decimal<um>) (stepSize : decimal<um> * decimal<um>) plane =
             
-            let numberOfStepsX = int (round ((float ((fst gridSize)/1m<um>)) / (float ((fst stepSize)/1.0m<um>))))
-            let numberOfStepsY = int (round ((float ((snd gridSize)/1m<um>)) / (float ((snd stepSize)/1.0m<um>))))
+            let numberOfStepsX = int (floor ((float ((fst gridSize)/1m<um>)) / (float ((fst stepSize)/1.0m<um>))))
+            let numberOfStepsY = int (floor ((float ((snd gridSize)/1m<um>)) / (float ((snd stepSize)/1.0m<um>))))
             let flybackStep = 1m<um>/(fst stepSize) |> round |> int
 
             let path = seq {
-                for y in 0 .. numberOfStepsY do
+                for y in 0 .. (numberOfStepsY-1) do
                     if y <> 0 then for x in (numberOfStepsX-flybackStep) .. -flybackStep .. flybackStep -> (x,y) // flyback to within 1um of the start of the next row
-                    for x in 0 .. numberOfStepsX -> (x,y) } // imaging points, may overwrite "flyback" points
+                    for x in 0 .. (numberOfStepsX-1) -> (x,y) } // imaging points, may overwrite "flyback" points
 
             { ArrayIndices = path |> Seq.toArray
               Origin = origin
