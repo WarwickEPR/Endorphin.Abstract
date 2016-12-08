@@ -1,5 +1,8 @@
-#### 0.3.6 - 2016-12-08
+#### 0.3.7 - 2016-12-08
 * Correct the number of points in raster scan paths so that 1xN scans work correctly
+
+#### 0.3.6 - 2016-11-25
+* Add parameter for the flyback skip size on raster images
 
 #### 0.3.5 - 2016-11-24
 * Add "raster" paths where the points used to build the image are taken in the same direction
